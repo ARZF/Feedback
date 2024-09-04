@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Review</title>
+    <link rel="stylesheet" href="{% static "reviews/styles.css" %}">
+</head>
+<body>
+<form action="/" method="POST">
+    {% csrf_token %}
+    {% for feild in form %}
+        <div class="form-control {% if feild.errors %}errors {% endif %}">
+            {{feild.label_tag}}
+            {{ feild }}
+            {{ feild.errors }}
+        </div>
+    {% endfor %}
+<button type="submit">Send</button>
+</form>
+</body>
+</html>
