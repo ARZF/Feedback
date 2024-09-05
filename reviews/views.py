@@ -21,6 +21,9 @@ class ReviewView(View):
             "form": form
         })
 
+class ThankYouView(View):
+    def Get (self, request):
+        return render(request, "reviews/thank_you.html")
 
-def thank_you(request):
-    return render(request, "reviews/thank_you.html")
+
+

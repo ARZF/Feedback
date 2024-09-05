@@ -1,13 +1,10 @@
-{% load static %}
+{% extends "reviews/base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Your Review</title>
-    <link rel="stylesheet" href="{% static "reviews/styles.css" %}">
-</head>
-<body>
+{% block title %}
+Your Review
+{% endblock %}
+
+{% block content %}
 <form action="/" method="POST">
     {% csrf_token %}
     {% for feild in form %}
@@ -19,5 +16,4 @@
     {% endfor %}
 <button type="submit">Send</button>
 </form>
-</body>
-</html>
+{% endblock %}
